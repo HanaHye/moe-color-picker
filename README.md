@@ -1,4 +1,5 @@
 # moe-color-picker
+<<<<<<< HEAD
 
 [![](https://img.shields.io/badge/license-CC_0-green.svg)]()
 [![](https://img.shields.io/badge/A_Moegirl_Project_(x)-limegreen.svg)](https://zh.moegirl.org.cn/_?curid=417122)
@@ -14,3 +15,6 @@
 
 鉴于作者低劣的Python水平，暂无增加功能的计划，并且不可以点炒饭。
 
+=======
+面向萌百的简易取色器
+>>>>>>> 9307f138f2993d247869eefa7cae19f71ea4857c
