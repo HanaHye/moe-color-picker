@@ -46,8 +46,6 @@ def onpress_1(event):
 
     if event.key == 'p':
         fig3 = plt.figure(figsize=(6, 10))
-        if dims[2] == 3:
-            colors = [color[:3] for color in colors]
         tbar = np.array([[colors[0]] * dims[1]] * 20*vw)
         lbar = np.array([[colors[1]] * round(dims[1] / 3)] * 50*vw)
         rbar = np.array([[colors[3]] * round(dims[1] * 2 / 3)] * 50*vw)
@@ -84,7 +82,7 @@ def onpress_2(event):
 
 
 if __name__ == "__main__":
-    path = input('输入图片文件路径：\n').strip('"')
+    path = input('输入图片文件路径：\n').strip('"').strip('file:///')
     colors = [[38, 202, 155, 255], [224, 255, 255, 255], [98, 188, 169, 255],
               [255, 255, 255, 255]]
     # Clipping input data to the valid range for imshow with RGB data
@@ -92,6 +90,8 @@ if __name__ == "__main__":
     img = mpimg.imread(path, 0)
     dims = np.shape(img)
     vw = round(dims[1] / 100)
+    if dims[2] == 3:
+        colors = [color[:3] for color in colors]
 
     fig = plt.figure(figsize=(6, 6))
     fig.canvas.mpl_connect('button_press_event', onclick)
